@@ -8,13 +8,24 @@
 import SwiftUI
 
 struct MessageInputView: View {
+    
+    @Binding var messageText: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            TextField("Message...", text: $messageText)
+                .textFieldStyle(PlainTextFieldStyle())
+                .frame(minHeight: 30)
+            
+            Button(action: {}, label: {
+                Text("Send")
+            })
+        }
     }
 }
 
 struct MessageInputView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageInputView()
+        MessageInputView(messageText: .constant("Message.."))
     }
 }

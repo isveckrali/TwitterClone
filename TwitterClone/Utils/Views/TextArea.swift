@@ -8,13 +8,27 @@
 import SwiftUI
 
 struct TextArea: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    
+    @Binding var text: String
+    let placeholder: String
+    
+    init(_ placeholder: String, text: Binding<String>) {
+        self._text = text
+        self.placeholder = placeholder
+        UITextView.appearance().backgroundColor = .clear
     }
-}
-
-struct TextArea_Previews: PreviewProvider {
-    static var previews: some View {
-        TextArea()
+    
+    var body: some View {
+        ZStack(alignment: .topLeading) {
+            if text.isEmpty {
+                Text(placeholder)
+                    .foregroundColor(Color(.placeholderText))
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 12)
+            }
+            
+            TextEditor(text: $text)
+                .padding(4)
+        }.font(.body)
     }
 }
