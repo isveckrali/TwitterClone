@@ -10,7 +10,7 @@ import SwiftUI
 struct RegistrationView: View {
     
     @State var email = ""
-    @State var passworkd = ""
+    @State var password = ""
     @State var fullname = ""
     @State var username = ""
     @State var showImagePicker = false
@@ -18,6 +18,7 @@ struct RegistrationView: View {
     @State var image: Image?
     
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    @ObservedObject var viewModel =  AuthViewModel()
     
     
     func loadImage() {
@@ -77,7 +78,7 @@ struct RegistrationView: View {
                         .cornerRadius(10)
                         .foregroundColor(.white)
                     
-                    CustomSecureField(text: $email, placeholder: Text("Password"))
+                    CustomSecureField(text: $password, placeholder: Text("Password"))
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.15)))
                         .cornerRadius(10)
@@ -86,7 +87,13 @@ struct RegistrationView: View {
                 .padding(.horizontal, 32)
                 
                 
-                Button(action: {}, label: {
+                Button(action: {
+                    
+                    guard let image = selectedUIImage else {return}
+                    
+                    viewModel.registerUser(email: email, password: password, username: username, fullname: fullname, profileImage: image)
+                    
+                }, label: {
                     Text("Sign Up")
                         .font(.headline)
                         .foregroundColor(.blue)

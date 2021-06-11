@@ -11,6 +11,7 @@ struct LoginView: View {
     
     @State var email = ""
     @State var password = ""
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         NavigationView {
@@ -31,7 +32,7 @@ struct LoginView: View {
                             .cornerRadius(10)
                             .foregroundColor(.white)
                         
-                        CustomSecureField(text: $email, placeholder: Text("Password"))
+                        CustomSecureField(text: $password, placeholder: Text("Password"))
                             .padding()
                             .background(Color(.init(white: 1, alpha: 0.15)))
                             .cornerRadius(10)
@@ -52,7 +53,9 @@ struct LoginView: View {
                         })
                     }
                     
-                    Button(action: {}, label: {
+                    Button(action: {
+                        viewModel.login(withEmail: email, password: password)
+                    }, label: {
                         Text("Sign In")
                             .font(.headline)
                             .foregroundColor(.blue)
