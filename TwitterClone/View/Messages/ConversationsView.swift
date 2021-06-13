@@ -11,6 +11,7 @@ struct ConversationsView: View {
     
     @State var isShowingNewMessageView = false
     @State var showChat = false
+    @State var isEditing = true
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -43,7 +44,7 @@ struct ConversationsView: View {
             .clipShape(Circle())
             .padding()
             .sheet(isPresented: $isShowingNewMessageView, content: {
-                NewMessageView(show: $isShowingNewMessageView, startChat: $showChat)
+                NewMessageView(show: $isShowingNewMessageView, startChat: $showChat, isEditing: $isEditing)
             })
             .navigationTitle("Messages")
             .navigationBarTitleDisplayMode(.inline)
