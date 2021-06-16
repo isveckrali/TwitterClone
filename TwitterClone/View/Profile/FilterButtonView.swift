@@ -9,15 +9,15 @@ import SwiftUI
 
 enum TweetFilterOptions: Int, CaseIterable {
     case tweets
-    case replies
+ //   case replies
     case likes
     
     var title: String {
         switch self {
         case .tweets:
             return "Tweets"
-        case .replies:
-            return "Tweets & Replies"
+//        case .replies:
+  //          return "Tweets & Replies"
         case .likes:
             return "Likes"
         }
@@ -27,6 +27,23 @@ enum TweetFilterOptions: Int, CaseIterable {
 struct FilterButtonView: View {
     
     @Binding var selectedOption: TweetFilterOptions
+    private let tabSpacing = CGFloat(40)
+    
+    private func tabWidht(at index: Int) ->  CGFloat {
+        let label = UILabel()
+        label.text = TweetFilterOptions(rawValue: index)?.title
+        return label.intrinsicContentSize.width
+    }
+    
+    private var leadingPadding: CGFloat {
+        var padding: CGFloat = 0
+        for i in 0..<TweetFilterOptions.allCases.count {
+            if i < selectedOption.rawValue {
+                padding += tabWidht(at: i) + tabSpacing
+            }
+        }
+        return padding
+    }
     
     private let underlineWidth = UIScreen.main.bounds.width / CGFloat(TweetFilterOptions.allCases.count)
     
