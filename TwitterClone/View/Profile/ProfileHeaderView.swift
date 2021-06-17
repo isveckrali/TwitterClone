@@ -10,8 +10,7 @@ import Kingfisher
 
 struct ProfileHeaderView: View {
     @State var selectedFilter: TweetFilterOptions = .tweets
-    @Binding var isFollowed: Bool
-    let viewModel: ProfileViewModel    
+    let viewModel: ProfileViewModel
     
     var body: some View {
         VStack {
@@ -37,7 +36,7 @@ struct ProfileHeaderView: View {
             
             HStack(spacing: 40) {
                 VStack {
-                    Text("12")
+                    Text("\(viewModel.user.stats.followers)")
                         .font(.system(size: 16)).bold()
                     
                     Text("Followers")
@@ -46,17 +45,17 @@ struct ProfileHeaderView: View {
                 }
                 
                 VStack {
-                    Text("12")
+                    Text("\(viewModel.user.stats.following)")
                         .font(.system(size: 16)).bold()
                     
-                    Text("Followers")
+                    Text("Following")
                         .font(.footnote)
                         .foregroundColor(.gray)
                 }
             }
             .padding()
             
-            ProfileActionButtonView(viewModel: viewModel, isFollowed: $isFollowed)
+            ProfileActionButtonView(viewModel: viewModel)
             
            
             

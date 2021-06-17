@@ -24,7 +24,8 @@ class UploadTweetViewModel: ObservableObject {
         
         let data: [String: Any] = ["uid": user.id,
                                    "caption": caption,
-                                   "fullname": user.fullname, "timestamp": Timestamp(date: Date()),
+                                   "fullname": user.fullname,
+                                   "timestamp": Timestamp(date: Date()),
                                    "username": user.username,
                                    "profileImageUrl": user.profileImageUrl,
                                    "likes": 0,
