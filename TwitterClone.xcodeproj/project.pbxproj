@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		103EC3A8267FE7F800D0D99A /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103EC3A7267FE7F800D0D99A /* MainTabView.swift */; };
 		10574B7B2666B36F00D6BAFC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10574B7A2666B36F00D6BAFC /* CustomTextField.swift */; };
 		10574B7D2666B84500D6BAFC /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10574B7C2666B84500D6BAFC /* CustomSecureField.swift */; };
 		10574B7F2666D36700D6BAFC /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10574B7E2666D36700D6BAFC /* ImagePicker.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		103EC3A7267FE7F800D0D99A /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		10574B7A2666B36F00D6BAFC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		10574B7C2666B84500D6BAFC /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		10574B7E2666D36700D6BAFC /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -121,6 +123,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		103EC3A6267FE7DB00D0D99A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				109D8074265E8E2B008DED52 /* ContentView.swift */,
+				103EC3A7267FE7F800D0D99A /* MainTabView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		1070A477266273D10042C788 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,11 +236,11 @@
 		109D8083265E8E8A008DED52 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				103EC3A6267FE7DB00D0D99A /* Main */,
 				1070A4872662D8B00042C788 /* Authentication */,
 				1070A4802662A25D0042C788 /* Tweets */,
 				1070A477266273D10042C788 /* Profile */,
 				109D8094265EBB81008DED52 /* Messages */,
-				109D8074265E8E2B008DED52 /* ContentView.swift */,
 				109D8085265E8EA7008DED52 /* FeedView.swift */,
 				109D8088265E9819008DED52 /* TweetCell.swift */,
 				109D808B265EA9B0008DED52 /* SearchView.swift */,
@@ -365,6 +376,7 @@
 				10574B8C2666F7E200D6BAFC /* AuthViewModel.swift in Sources */,
 				1093FB91267BD4ED00D3D30F /* ChatViewModel.swift in Sources */,
 				109D80A0265EC663008DED52 /* ChatView.swift in Sources */,
+				103EC3A8267FE7F800D0D99A /* MainTabView.swift in Sources */,
 				109D8096265EBB8F008DED52 /* ConversationsView.swift in Sources */,
 				1070A4892662D8F50042C788 /* LoginView.swift in Sources */,
 				1093FB7D26764FE500D3D30F /* ProfileViewModel.swift in Sources */,
