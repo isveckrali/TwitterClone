@@ -13,7 +13,7 @@ struct MessageView: View {
     let message: Message
     
     var body: some View {
-        HStack {
+        HStack() {
             if message.isFromCurrentUser {
                 Spacer()
                 
